@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#02101a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>J.A.R.V.I.S.</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <span class="brand">J.A.R.V.I.S.</span>
+    <button id="settingsBtn" aria-label="Réglages">⚙</button>
+  </header>
+
+  <section class="reactor" id="reactor" data-state="idle">
+    <div class="ring r1"></div>
+    <div class="ring r2"></div>
+    <div class="ring r3"></div>
+    <div class="core"></div>
+  </section>
+  <p id="status" aria-live="polite">Système en veille</p>
+
+  <section id="log" aria-live="polite"></section>
+
+  <form id="form">
+    <input id="text" type="text" autocomplete="off" placeholder="Écrivez ou dites « Jarvis… »">
+    <button type="button" id="mic" aria-label="Parler">🎙</button>
+  </form>
+</main>
+
+<dialog id="settings">
+  <form method="dialog">
+    <h2>Réglages</h2>
+    <label>Mot d'activation
+      <input id="wakeWord" type="text" value="jarvis">
+    </label>
+    <label class="row"><input id="alwaysOn" type="checkbox"> Écoute permanente (mot d'activation)</label>
+    <label>Voix
+      <select id="voice"></select>
+    </label>
+    <label>Serveur cerveau (Claude)
+      <input id="server" type="url" placeholder="https://… (vide = même origine)">
+    </label>
+    <label>Jeton (optionnel)
+      <input id="token" type="password" autocomplete="off">
+    </label>
+    <label>Votre prénom
+      <input id="userName" type="text" placeholder="Monsieur">
+    </label>
+    <menu><button value="ok">Fermer</button></menu>
+  </form>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>
