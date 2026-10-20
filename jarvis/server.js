@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 8787;
 const KEY = process.env.ANTHROPIC_API_KEY;
 const MODEL = process.env.ANTHROPIC_MODEL || 'claude-sonnet-5-5';
 const TOKEN = process.env.JARVIS_TOKEN;            // optionnel : protège /api/chat
-const PUBLIC = path.join(__dirname, 'public');
+const PUBLIC = path.join(__dirname, '..', 'docs');
 const MIME = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.webmanifest': 'application/manifest+json' };
 
 const SYSTEM = name => `Tu es J.A.R.V.I.S., l'assistant personnel de ${name}, sur son téléphone, façon Iron Man.
